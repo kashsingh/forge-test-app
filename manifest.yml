@@ -1,0 +1,29 @@
+modules:
+  jira:globalPage:
+    - key: code-editor
+      resource: main
+      resolver:
+        function: resolver
+      title: test-forge
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/global-page/build
+    tunnel:
+      port: 3000
+app:
+  id: ari:cloud:ecosystem::app/9c84f7e6-2cfc-405f-a82e-9b6eb4d529b9
+permissions:
+  scopes:
+    - storage:app
+    - manage:jira-configuration
+    - read:jira-user
+    - read:jira-work
+    - write:jira-work
+  content:
+    styles:
+      - unsafe-inline
+    scripts:
+      - unsafe-inline
